@@ -1,0 +1,49 @@
+<% include ./partials/header %>
+<div class="space intro-landing">
+	<div class="intro-box">
+    	<h3 class="putcenter">ALL BLOGS</h3>
+    </div>
+</div>
+<div class="container padding-gap putcenter" style="overflow: scroll; height: 520px;">
+	<% blogs.forEach(function(blog){ %>
+        <div class="card card-color">
+        	<div class="card-body">
+        		<h4><%=blog.title%></h4>
+        		<h6><%= blog.created.toDateString() %></h6>
+        		<div>
+        			<img class="imagecontainer" src="<%= blog.image %>">
+        		</div>
+        		<p class="fontsize"><%= blog.body.substring(0, 200) %>...</p>
+        		<button class="btn btn-outline-primary" onclick="location.href='/blogs/<%= blog._id %>'">Read more</button>
+        	</div>
+        </div><br/>
+    <% }) %>
+</div>
+<!--<div class="row">
+    <div class="container-fluid col-lg-2 col-md-2 col-sm-2">
+		<div class="btn-group-vertical">
+			<button type="button" class="btn btn-primary">All Blogs</button>
+			<button type="button" class="btn btn-primary">Business</button>
+			<button type="button" class="btn btn-primary">Fashion</button>
+			<button type="button" class="btn btn-primary">Finance</button>
+			<button type="button" class="btn btn-primary">Fitness</button>
+			<button type="button" class="btn btn-primary">Food</button>
+			<button type="button" class="btn btn-primary">Gaming</button>
+			<button type="button" class="btn btn-primary">Lifestyle</button>
+			<button type="button" class="btn btn-primary">Movie</button>
+			<button type="button" class="btn btn-primary">Music</button>
+			<button type="button" class="btn btn-primary">Parenting</button>
+			<button type="button" class="btn btn-primary">Personal</button>
+			<button type="button" class="btn btn-primary">Political</button>
+			<button type="button" class="btn btn-primary">Technology</button>
+			<button type="button" class="btn btn-primary">Travel</button>
+			<button type="button" class="btn btn-primary">Sports</button>
+		</div>
+	</div>
+	<div class="container-fluid col-lg-10 col-md-10 col-sm-10">
+		<div style="overflow: scroll; height: 520px; width: 100%;">
+
+		</div>
+	</div>
+</div>-->
+<% include ./partials/footer %>

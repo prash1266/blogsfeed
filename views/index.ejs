@@ -1,0 +1,62 @@
+<% include ./partials/header %>
+<div class="space landing-page">
+  <div class="container landing-content putcenter">
+    <h3>Welcome to <i style="font-family: 'Lobster', cursive">blogsfeed</i></h3>
+    <hr width="75%" style="border: 1px solid white; background-color:white;">
+    <hr width="50%" style="border: 1px solid white; background-color:white;">
+    <p><sup><i class="fa fa-quote-left"></i></sup> an investment in KNOWLEDGE always pays the best INTEREST <sup><i class="fa fa-quote-right"></i></sup></p>
+    <p>-Ben Franklin</p>
+    <button type="button" class="btn" onclick="location.href = '#recent'">Let's Get Started</button>
+  </div>
+</div>
+<div class="container-fluid padding-gap">
+  <div class="row showhidden" id="recent">
+    <div class="container-fluid col-lg-9 col-md-12 col-sm-12">
+      <div>
+        <h3 class="putcenter">Recent Blogs</h3>
+      </div>
+      <div>
+        <% blogs.slice(0,4).forEach(function(blog){ %>
+          <div class="card card-color">
+            <div class="card-body">
+              <h3><%=blog.title%></h3>
+              <h6><%= blog.created.toDateString() %></h6>
+              <div class="container putcenter">
+                <img class="imagecontainer" src="<%= blog.image %>">
+              </div>
+              <p class="fontsize"><%= blog.body.substring(0, 200) %>...</p>
+              <button class="btn btn-outline-primary" onclick="location.href='/blogs/<%= blog._id %>'">Read more</button>
+            </div>
+          </div><br/>
+        <% }) %>
+      </div>
+    </div>
+    <div class="container-fluid col-lg-3 col-md-12 col-sm-12">
+      <div>
+        <h3 class="putcenter">Trending Blogs</h3>
+      </div>
+      <div>
+        <div class="card card-color">
+          <% blogs.slice(-2).forEach(function(blog){ %>
+            <div class="card-body">
+              <img class="imagefull" src="<%= blog.image %>" onclick="location.href = '/blogs/<%= blog._id %>'">
+              <h4><%=blog.title%></h4>
+            </div>
+          <% }) %>
+        </div>
+      </div><br/>
+      <div>
+        <h3 class="putcenter">All Blogs</h3>
+      </div>
+      <div>
+        <div class="card card-color">
+          <div class="card-body">
+            <p>To checkout our all posts click on the button below...</p>
+            <button type="button" class="btn btn-outline-primary" onclick="location.href='/blogs/allblogs'">All Blogs</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% include ./partials/footer %>

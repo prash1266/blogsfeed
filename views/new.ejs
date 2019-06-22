@@ -1,0 +1,47 @@
+<% include ./partials/header %>
+<div class="shownavhide"></div>
+<div class="ui main text container segment">
+    <div class="ui huge header">New Blog</div>
+    <form class="ui form" action="/blogs" method="POST">
+        <div class="field">
+            <label>Title:</label>
+            <input type="text" name="blog[title]" placeholder="title" required>
+        </div>
+        <div class="field">
+            <label>Author:</label>
+            <input type="text" name="blog[author]" placeholder="author" required>
+        </div>
+        <div class="field">
+            <label>Alias:</label>
+            <input type="text" name="blog[alias]" placeholder="alias" required>
+        </div>
+        <div class="field">
+            <label>Image:</label>
+            <input type="text" name="blog[image]" placeholder="upload image" required>
+        </div>
+        <div class="field">
+            <label>Blog:</label>
+            <textarea name="blog[body]" placeholder="your text here..." required></textarea>
+        </div>
+        <input class="ui blue button" type="submit">
+    </form>
+    <script>
+        CKEDITOR.replace( 'blog[body]' );
+    </script>
+</div>
+<div class="container padding-gap putcenter" style="overflow: scroll; height: 520px;">
+    <% blogs.forEach(function(blog){ %>
+        <div class="card card-color">
+            <div class="card-body">
+                <h4><%=blog.title%></h4>
+                <div>
+                    <a class="btn btn-outline-primary" href="/blogs/<%= blog._id %>/edit">Edit</a>
+                    <form id="delete" action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
+                        <button class="btn btn-outline-danger">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div><br/>
+    <% }) %>
+</div>
+<% include ./partials/footer %>
