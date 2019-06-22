@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css?family=Oxygen');
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+
+.navbg {
+  background: linear-gradient(to right, #000000, #434343);
+}
+
+.transparent-nav.addcolor {
+  background: linear-gradient(to right, #000000, #434343);
+  transition: background-color 2s linear;
+}
+
+.logo-font {
+  font-family: 'Lobster', cursive;
+}
+
+.nav-logo-box {
+  height: 66px;
+  width: 152px;
+  background-color: #53E285;
+  border-bottom-right-radius: 25px;
+  margin-left: -16px;
+  margin-top: -6px;
+  margin-bottom: -6px;
+  padding-left: 10px;
+  padding-top: 15px;
+  opacity: 0.8;
+}
+
+.nav-logo {
+  height: 40px;
+  width: 60px;
+}
+
+.nav-font {
+  font-family: 'Oxygen', sans-serif;
+  font-weight: bold;
+}
+
+.footer-bg {
+  background: linear-gradient(to right, #000000, #434343);
+  bottom: 0;
+}
+
+.footer-font {
+  text-align: center;
+  color: white;
+}
+
+.footer-logo {
+  height: 30px;
+  width: 40px;
+}
+
+.social-links a.fa {
+  padding: 10px;
+}
+
+.footer-content {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 20px;
+}
+
+.search-bar {
+  border-radius: 25px;
+  padding-left: 10px;
+  height: 40px;
+  width: 250px;
+  margin: 10px;
+  outline: none;
+}
+
+button.search-btn {
+  padding: 15px;
+  margin-left: -60px;
+  border-radius: 50%;
+  outline: none;
+}
+
+.footer-fill {
+  margin-bottom: 0px;
+}
